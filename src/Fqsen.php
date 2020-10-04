@@ -66,7 +66,9 @@ final class Fqsen
         } else {
             $matches = explode('\\', $fqsen);
             $name = end($matches);
-            assert(is_string($name));
+            if(is_bool($name)){
+                $name = '';
+            }
             $this->name = trim($name, '()');
         }
     }
